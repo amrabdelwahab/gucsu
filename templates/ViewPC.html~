@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<table border=1>
+<tr><td width=25%><b>Cabinet Name:</b><br>{{cabinet.name}}</td>
+<td><b>Agenda:</b><br>{{cabinet.agenda|linebreaks}}</td>
+</tr>
+<tr></tr>
+<tr></tr>
+{% for c in cabinetmembers %}
+<tr><td>{{c.name}}</td><td></td></tr>
+
+<tr><td><img  width='100%' height='15%' src="{{MEDIA_URL}}{{c.filename}}"/></td><td>{{c.position.name}}</td></tr>
+{% endfor %}
+</table>
+
+{% endblock %}

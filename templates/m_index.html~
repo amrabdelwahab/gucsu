@@ -1,0 +1,59 @@
+
+{% load i18n %}
+
+{% block content %}
+<!DOCTYPE html> 
+<html> 
+    <head> 
+    <title>Home Page</title> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
+</head> 
+<body>
+
+<!-- Home Page -->
+<div data-role="page" > 
+{% if user.is_authenticated %}
+
+    <div data-role="header">
+
+        <div data-role="navbar">
+	<ul>
+<li><a href="/" rel="external"  class="ui-btn-active ui-state-persist">Student Mode</a></li>
+		<li><a rel="external" href="/courses/ITeach" rel="external">Teacher Mode</a></li>
+		<a rel="external" href='/accounts/logout/' rel="external" > logout</a>
+	</ul>
+</div><!-- /navbar -->   
+ </div> 
+    <div data-role="content">
+
+
+
+{% if user.course_set.all %}
+<h2>Courses you are subscribed to:</h2>
+<ul data-role="listview" data-inset="true">
+{% for course1 in user.course_set.all %}
+<li><a href="/courses/{{course1.id}}/" rel="external">{{course1.title}}</a></li>
+{% endfor %}</ul>
+<a href="/courses/subscribtion" rel="external"> Subscribe in more courses</a>
+{% else %}
+<h2> You are not subscribed to any courses, <a href="/courses/subscribtion" rel="external"> Subscribe now</a> 
+{% endif %}
+</div> 
+</div> 
+{% else %}
+    <div data-role="header">
+<br><br>
+        <a href="/accounts/login" rel="external">Login</a>
+    </div> 
+    <div data-role="content">
+    <p>Welcome, new user. Please log in.</p>
+</div> 
+</div> 
+{% endif %}
+
+</body>
+</html>
+
+{% endblock %}

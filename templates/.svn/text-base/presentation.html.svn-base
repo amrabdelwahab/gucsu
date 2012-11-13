@@ -1,0 +1,24 @@
+{% load slideshare_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Slideshare presentation</title>
+</head>
+<body id="presentation" onload="">
+
+
+        <h2><a href="{{ pres.url }}">{{ pres.title}}</a></h2>
+<p></p>
+        <p><em>{{ pres.date_posted }}</em></p>
+        <p>
+        {{ pres.abstract}}
+        </p>
+
+<p>{% slideshare_embed pres %}</p>
+
+<p>{% slideshare_test %}</p>
+        
+
+</body>
+</html>

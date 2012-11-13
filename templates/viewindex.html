@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<html>
+<script type="text/javascript" src="js/script.js"></script>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<h1> View candidates</h1>
+<form enctype="multipart/form-data" method="post" action="/show/">
+{% csrf_token %}
+<p>
+ <select  id='post' name='post'>
+<option value='0'>Choose..</option>
+<option value='PC'>Presidential cabinets</option>
+<option value='SJB'>SJB</option>
+<option value='Senate'>Senate</option>
+<option value='SC'>Student council</option>
+</select>
+ <select class='target' style="display:none" id='faculty' name='faculty'>
+
+<option value='0'>Choose Faculty..</option>
+{% for f in faculties %}
+<option value='{{f.id}}'>{{f.name}}</option>
+{% endfor %}
+</select>
+<select class='target' style="display:none" id='committee' name='committee'>
+<option value='0'>Choose committee..</option>
+{% for c in committees %}
+<option value='{{c.id}}'>{{c.name}}</option>
+{% endfor %}
+</select>
+<select class='target' style="display:none" id='grade' name='grade'>
+<option value='0'>Choose grade..</option>
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option></select>
+<select class='target' style="display:none" id='cab' name='cab'>
+<option value='0'>Choose cabinet..</option>
+{% for ca in cabinets %}
+<option value='{{ca.id}}'>{{ca.name}}</option>
+{% endfor %}
+</select></p>
+<input type="submit" value="View" />
+
+</form>
+<script type="text/javascript">
+$('#post').change(function() {
+  if ($('#post').val()=='PC'){
+$('.target').hide();
+$('#cab').show();
+}
+else{
+  if ($('#post').val()=='SC'){
+$('.target').hide();
+$('#faculty').show();
+$('#committee').show();
+}else{
+$('.target').hide();
+$('#faculty').show();}}
+
+});
+$('#committee').change(function() {
+  if ($('#committee').val()=='1'){
+$('.target').hide();
+$('#faculty').show();
+$('#committee').show();
+$('#grade').show();
+}
+});
+
+</script>
+
+</html>
+{% endblock %}

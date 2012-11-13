@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<H1> GUC SU elections system </h1>
+<h3>Presidential Cabinet</h3>
+<p>
+Nominees of a precedential list should meet the following criteria:
+<ul>
+<li>Not probation</li>
+<li>No history of disciplinary Actions</li>
+<li>President and Treasurer should have spent at least 3 semesters as stu-dents at the GUC</li>
+<li>Not a member of any active working group</li>
+<li>Has Not been terminated from the previous SU</li>
+</ul>
+</p>
+<ul class="linked"><li>
+<a href="/newpc">Create A new Cabinet</a></li><li>
+<a href="#">Join a previously created cabinet</a></li></ul>
+{% endblock %}

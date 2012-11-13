@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+    <head > 
+    <link rel="stylesheet" href="/static/jquery.mobile-1.0a2/jquery.mobile-1.0a2.min.css" />
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/jquery.mobile-1.0a2/jquery.mobile-1.0a2.min.js"></script>
+  
+</head> 
+<body>
+
+<div data-role="page" > 
+   
+    <div data-theme="c" data-role="navbar">
+	<ul>
+<li><a onClick="$('#sideNoti').load('/index1');" href='#'  class="ui-btn-active ui-state-persist" >Courses you study</a></li>
+				<li><a    href="#"  onclick="$('#sideNoti').load('/courses/subscribtion')" >Subscribe</a></li>
+
+	</ul>
+</div>  
+  <div data-role="content" data-theme="b">
+{% if user.course_set.all %}
+  <h2 style=" color:#333333">Courses you are subscribed to:</h2>
+  <ul data-role="listview" data-theme="r" data-inset="true" >
+  {% for course1 in user.course_set.all %}
+  <li><a rel="external" href="/courses/{{course1.id}}/">{{course1.title}}</a>
+  <a href="#"  onclick="$('#sideNoti').load('/courses/{{course1.id}}/confirmun')" data-theme="c" data-role="button" data-icon="delete" data-iconpos="notext">Unsubscribe</a> 
+
+  </li>
+{% endfor %}</ul>
+{% else %}
+<ul data-role="listview" data-theme="g" data-inset="true" >
+<li> You are not subscribed to any courses</li>
+</ul>
+{% endif %}
+</div></div>
+</body>
+</html>
+
+
+  

@@ -1,0 +1,267 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<script src="/static/jquery.min.js" type="text/javascript"></script>
+      
+    <style type="text/css">
+body
+{
+background-color:#F8F8F8 ;
+color:#000000;
+}
+.note
+{background-color: #fef5be;
+color:#333333;
+  border-top: 2px solid #fdd425;
+  border-bottom: 2px solid #fdd425;
+font-family:"Times New Roman", Times, serif;} 
+.note1{
+margin-left: 10px;
+}
+h1
+{
+color:#000000;
+text-align:center;
+}
+h2
+{
+color:#000000;
+text-align:left;
+}
+h3
+{
+color:#000000;
+font-size:16px;
+text-align:center;
+}
+#header
+{
+
+}
+.sideHolder {
+﻿  position: fixed;
+﻿  right: 0px;
+﻿  top: 0px;
+﻿  height: 100%;
+﻿  margin: auto 0px;
+﻿  color: white !important;
+﻿  margin: auto 0px;
+}
+
+.notch:hover {
+﻿  margin-right: 15px;
+}
+
+.notch2:hover {
+﻿  margin-right: 0px;
+}
+.siderC {
+﻿  position: relative;
+﻿  margin-left: -230px;
+﻿  right: -230px;
+﻿  padding: 0px 15px;
+﻿  height: 100%;
+﻿  width: 200px;
+﻿  background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.7);
+﻿  display: inline-block;
+﻿  z-index: 1000;
+}
+#graph li
+{
+   position:absolute;	
+   list-style:none;
+   background:lightblue;
+   width:40px;
+   text-align:center;
+   border:1px solid black;
+   visibility: hidden;
+   background-image:url(bar-shaded.png);
+   background-repeat:repeat-y;
+}
+a
+{
+color:#000000;
+}
+p
+{
+font-family:"Times New Roman";
+font-size:20px;
+}
+.navbar
+{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+}
+.ui-bar-x{
+  background-color:#000000;
+  color:#000000;
+  }
+.ui-bar-g{
+  background-color:#000000
+  color:#333333;
+  }
+.ui-listview .ui-btn-up-g {
+  background-color:#000000;
+  color:#333333;
+}  
+.ui-listview .ui-btn-up-m {
+  background-color:#FF9999;
+  color:#333333;
+}  
+.ui-listview .ui-btn-up-r {
+  background-color:#CCFFCC;
+  color:#333333;
+}  
+.ui-listview .ui-btn-up-s {
+  background-color:#CCFFCC;
+  color:#333333;
+  width:400;
+}  
+
+.ui-li-has-thumb .ui-btn-inner {
+    min-height: 10px;
+    padding-left: 100px;
+}
+
+
+.ui-li-g
+{
+  background-color:#CCFFCC;
+  color:#333333;
+
+}
+.ui-li-r
+{
+ background-color:#FF9999;
+   color:#333333;
+
+}
+
+.itemnav
+{
+float:left;
+}
+.anav1:link,.anav1:visited
+{
+display:block;
+width:620px;
+font-weight:bold;
+color:#333333;
+background-color:#000000;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+.anav:link,.anav:visited
+{
+display:block;
+width:600px;
+font-weight:bold;
+color:#000000;
+background-color:#333333;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+.anav1:hover,.anav1:active
+{
+color:#333333;
+background-color:#000000;
+}
+
+h1, h2,ul {
+	clear: both;
+}
+
+ul li:hover {
+	background-color: #FF9500;
+}
+
+ul.linked li{
+    padding: 10px;
+    font-family: georgia;
+	background-color: #FFCC66;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1;
+    width: 600px;
+    margin-bottom: 1px;
+	list-style:none;
+}
+
+ul.red {
+	outline:10px solid red;
+}
+
+ul.simplePagerNav li{
+    display:block;
+    float: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: georgia;
+	font-size:14px;
+}
+
+ul.simplePagerNav li a{
+    color: #333;
+    text-decoration: none;
+}
+
+li.currentPage {
+	background: red;
+    background: #FF9500;	
+}
+
+ul.simplePagerNav li.currentPage a {
+	color: #fff;	
+}
+
+table.pageme {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}  
+
+table.pageme td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+</style>
+<title>{% block title %}GUC Student Union 13' Elections{% endblock %}</title>
+
+</head>
+
+<body>
+
+    <div id="header">
+        {% block header %}
+        <a rel="external"  href="/"><img width="100%" height="200" src="/static/su.jpg" alt="some_text"/> </a>
+        
+        
+        {% endblock %}
+    </div>
+
+    <div id="content">
+
+        
+
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+        <hr />
+        {% endblock %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<h1>{{faculty.name}} SJB Candidates</h1>
+<hr>
+<table border=1>
+{% for c in candidates %}
+<tr><td width="25%"><b>{{c.name}}</b></td><td><b>Agenda</b></td></tr><tr><td><img  width='100%' height='15%' src="{{MEDIA_URL}}{{c.filename}}"/>   
+</td><td>{{c.agenda|linebreaks}}</td> </tr>
+{% endfor %}
+</table>
+{% endblock %}	

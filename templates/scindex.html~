@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<H1> GUC SU elections system </h1>
+<h3>Student Council</h3>
+
+<ul>
+<li>Academic & Scientiﬁc Activities Committee</li>
+<li>Culture & Arts Committee</li>
+<li>Political Activities Committee</li>
+<li>Sports Committee</li>
+<li>Trips Committee</li>
+<li>Public & Environmental Services Committee</li>
+</ul>
+{% endblock %}

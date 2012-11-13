@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<html>
+<h1> New Presidential Cabinet</h1>
+<form enctype="multipart/form-data" method="post" action="/join/">
+{% csrf_token %}
+<p>Cabinet*: <select id='cab' name='cab'>
+{% for c in cabinets %}
+<option value='{{c.id}}'>{{c.name}}</option>
+{% endfor %}
+</select></p>
+<p>Cabinet Secret Key(Ask the president about it)*: <input min='8' id='key' name='key' type="text"/></p>
+
+<p>Position*: <select id='pos' name='pos'>
+{% for p in positions %}
+{% ifequal p.id 1 %}
+{% else %}
+<option value='{{p.id}}'>{{p.name}}</option>
+{% endifequal %}
+{% endfor %}
+</select></p>
+
+<p>Name*: <input id='name' name='name' type="text"/></p>
+<p>Student ID*: <input id='id' name='id' type="text"/></p>
+<p>Faculty*: <select id='faculty' name='faculty'>
+{% for f in faculties %}
+<option value='{{f.id}}'>{{f.name}}</option>
+{% endfor %}
+</select></p>
+<p>Batch*:  <select id='batch' name='batch'>
+{% for b in batches %}
+<option value='{{b.id}}'>{{b.numberBeforeDash}}-</option>
+{% endfor %}
+</select></p>
+<p>Mobile Number *(Won't be shown-only for organisers use): <input id='mobile' name='mobile' type="text"/></p>
+<p>GPA *(Won't be shown-only for organisers use): <input id='gpa' name='gpa' type="text"/></p>
+<p>GUC Email *(Won't be shown-only for organisers use): <input id='mail' name='mail' type="email"/></p>
+<p>Image*(.GIF or .JPEG): <input id='file' name='file' type="file" accept="image/*" /></p>
+
+<br>
+<input type="submit" value="Nominate" />
+
+</form>
+</html>
+{% endblock %}

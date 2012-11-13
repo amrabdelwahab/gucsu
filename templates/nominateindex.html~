@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<H1> GUC SU elections system </h1>
+<p>To check the bylaws <a href="http://www.scribd.com/doc/109146232/Final-GUC-SU-Bylaws-2011-2012">click here</a></p>
+
+<ul>
+<li><a href="/nominate/sjb">Student Judicial Board</a></li>
+<li><a href="/nominate/senate">Senate</a></li>
+<li><a href="/nominatesc">Student Council</a></li>
+<li><a href="/nominate/prc">Presidential Cabinet</a></li>
+</ul>
+{% endblock %}

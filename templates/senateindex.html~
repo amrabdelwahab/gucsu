@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<H1> GUC SU elections system </h1>
+<h3>Senate</h3>
+<p>
+Nominees of a Senate should meet the following criteria:
+<ul>
+<li>Not probation</li>
+<li>No history of disciplinary Actions</li>
+<li>Has Not been terminated from the previous SU</li>
+</ul>
+</p>
+<ul class=linked><li>
+<a href="/nominatesenate">Nominate</a></li></ul>
+{% endblock %}
